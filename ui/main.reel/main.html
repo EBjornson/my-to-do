@@ -17,6 +17,9 @@
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
                 "action": "addContent",
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true",
                 "handler": {"@": "rangeController"}
             },
             "_dev": {
@@ -27,6 +30,7 @@
             "prototype": "digit/ui/button.reel",
             "properties": {
                 "element": {"#": "button"},
+                "active": false,
                 "contenteditable": "true",
                 "dir": "ltr",
                 "draggable": "true",
@@ -36,6 +40,7 @@
             "listeners": [
                 {
                     "type": "action",
+                    "useCapture": true,
                     "listener": {"@": "actionEventListener"}
                 }
             ]
@@ -51,7 +56,12 @@
             }
         },
         "rangeController": {
-            "prototype": "montage/core/range-controller"
+            "prototype": "montage/core/range-controller",
+            "properties": {
+                "contenteditable": "true",
+                "dir": "ltr",
+                "draggable": "true"
+            }
         },
         "title": {
             "prototype": "digit/ui/title.reel",
